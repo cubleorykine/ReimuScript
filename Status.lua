@@ -1,6 +1,6 @@
 local ditmebanana = {}
 
-function ditmebanana:CreateStatus(a,b)
+function ditmebanana.addStatus(a,b)
 	local DitMeRoblox = Instance.new("ScreenGui")
 	local Cac = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
@@ -8,7 +8,7 @@ function ditmebanana:CreateStatus(a,b)
 	local Text2 = Instance.new("TextLabel")
 
 	DitMeRoblox.Name = "DitMeRoblox"
-	DitMeRoblox.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	DitMeRoblox.Parent = game.Players.LocalPlayer.PlayerGui
 	DitMeRoblox.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	Cac.Name = "Cac"
@@ -55,6 +55,10 @@ function ditmebanana:CreateStatus(a,b)
 	Text2.TextSize = 14.000
 	Text2.TextWrapped = true
 	Text2.TextXAlignment = Enum.TextXAlignment.Left
+
+	function ditmebanana.Close()
+		DitMeRoblox:Destroy()
+	end
 end
 
 return ditmebanana
